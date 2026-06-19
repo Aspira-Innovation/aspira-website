@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Aspira Innovation Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official enterprise website for **Aspira Innovation**, showcasing our digital solutions, portfolio, services, and client testimonials. The site features a modern, responsive design with smooth animations and an interactive contact form powered by a live database.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Frontend:** React (v19)
+*   **Build Tool:** Vite
+*   **Styling:** Tailwind CSS
+*   **Animations:** Framer Motion
+*   **Icons:** Lucide React
+*   **Database (Contact Form):** Supabase
 
-## React Compiler
+## 🛠️ Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+You need to have [Node.js](https://nodejs.org/) installed on your machine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  Clone the repository (if you haven't already):
+    ```bash
+    git clone https://github.com/Aspira-Innovation/aspira-website.git
+    cd "Aspira Innovation Website"
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2.  Install the project dependencies:
+    ```bash
+    npm install
+    ```
+
+### Environment Variables
+
+This project uses Supabase to store submissions from the contact form. To run the project locally, you must create a `.env` file in the root directory and add your Supabase credentials:
+
+1.  Create a file named `.env` in the root folder.
+2.  Add the following lines (replace with your actual Supabase keys):
+    ```env
+    VITE_SUPABASE_URL=your_supabase_project_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
+
+### Running Locally
+
+To start the local development server with hot-module reloading:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Building for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To create an optimized production build, run:
+
+```bash
+npm run build
 ```
+
+This will generate a `dist` folder containing the compiled HTML, CSS, and JavaScript files ready for deployment.
+
+## 🌍 Deployment
+
+This project is configured for seamless deployment on **Vercel**. 
+
+1. Connect the GitHub repository to a new Vercel project.
+2. Vercel will automatically detect the "Vite" framework preset.
+3. Add the `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to the Environment Variables section in the Vercel dashboard.
+4. Deploy! Any future pushes to the `main` branch will automatically trigger a new build.
