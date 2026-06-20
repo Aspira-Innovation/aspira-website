@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Link to the sitemap location
-Sitemap: https://aspira-website.vercel.app/sitemap.xml
+Sitemap: https://aspira-innovations.vercel.app/sitemap.xml
