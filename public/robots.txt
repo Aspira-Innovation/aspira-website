@@ -1,0 +1,6 @@
+# Allow all web crawlers to scan the website
+User-agent: *
+Allow: /
+
+# Link to the sitemap location
+Sitemap: https://aspira-website.vercel.app/sitemap.xml
